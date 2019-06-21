@@ -12,4 +12,5 @@ basePath: {{ base_path }}
 schemes:
   - http
   - https
+{{ swagger_base_additionals }}
 paths:

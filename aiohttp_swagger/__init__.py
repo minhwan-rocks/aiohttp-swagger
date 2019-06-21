@@ -29,6 +29,7 @@ def setup_swagger(app: web.Application,
                   *,
                   swagger_from_file: str = None,
                   swagger_url: str = "/api/doc",
+                  swagger_base_additionals: str = "",
                   api_base_url: str = "/",
                   description: str = "Swagger API definition",
                   api_version: str = "1.0.0",
@@ -46,7 +47,8 @@ def setup_swagger(app: web.Application,
                                                         description=description,
                                                         api_version=api_version,
                                                         title=title,
-                                                        contact=contact)
+                                                        contact=contact,
+                                                        swagger_base_additionals=swagger_base_additionals)
 
     # Add API routes
     app.router.add_route('GET', _swagger_url, _swagger_home)

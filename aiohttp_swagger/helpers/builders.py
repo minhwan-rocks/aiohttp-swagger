@@ -43,7 +43,8 @@ def generate_doc_from_each_end_point(app: web.Application,
                                      description: str = "Swagger API definition",
                                      api_version: str = "1.0.0",
                                      title: str = "Swagger API",
-                                     contact: str = ""):
+                                     contact: str = "",
+                                     swagger_base_additionals: str = ""):
     # Clean description
     _start_desc = 0
     for i, word in enumerate(description):
@@ -58,7 +59,8 @@ def generate_doc_from_each_end_point(app: web.Application,
         version=api_version,
         title=title,
         contact=contact,
-        base_path=api_base_url
+        base_path=api_base_url,
+        swagger_base_additionals=swagger_base_additionals
     )
 
     # The Swagger OBJ
